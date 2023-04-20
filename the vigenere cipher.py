@@ -38,7 +38,14 @@ def encrypt(plaintext, key):
     padded_key = _pad_key(plaintext, key)
     for plaintext_char, key_char in zip(plaintext, padded_key):
         ciphertext += _encrypt_decrypt_char(plaintext_char, key_char)
-    return ciphertext    
+    return ciphertext
+
+def decrypt(ciphertext, key):
+    plaintext = ""
+    padded_key = _pad_key(ciphertext, key)
+    for ciphertext_char, key_char in zip(ciphertext, padded_key):
+        plaintext += _encrypt_decrypt_char(ciphertext_char, key_char, mode= 'decrypt')
+    return plaintext      
 # ask the user for an input and save its input
 # recognize the input by the user
 # print the output
