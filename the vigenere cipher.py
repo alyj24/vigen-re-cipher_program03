@@ -47,5 +47,9 @@ def decrypt(ciphertext, key):
         plaintext += _encrypt_decrypt_char(ciphertext_char, key_char, mode= 'decrypt')
     return plaintext      
 # ask the user for an input and save its input
+
+plaintext_input_str = input("\033[93mGreat Day! Please enter in all uppercase letters with no spaces your input message: ")
+key_input_str = input("\033[92mOne last thing, Please enter in all uppercase letters with no spaces your input key: ")
+
 # recognize the input by the user
 # print the output
