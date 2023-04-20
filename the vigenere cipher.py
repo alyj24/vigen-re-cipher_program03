@@ -17,6 +17,20 @@ def _pad_key(plaintext, key):
     else:
             padded_key += ""
     return padded_key        
+def _encrypt_decrypt_char(plaintext_char, key_char, mode= 'encrypt'):
+    if plaintext_char.isalpha():
+         first_alphabet_letter = 'a'
+    if plaintext_char.isupper():
+         first_alphabet_letter = 'A'
+
+    old_char_position = ord(plaintext_char) - ord(first_alphabet_letter) 
+    key_char_position = ord(key_char.lower()) - ord('a')  
+
+    if mode == 'encrypt':
+       new_char_position = (old_char_position + key_char_position) % 26
+    else:  
+       new_char_position = (old_char_position - key_char_position + 26) % 26
+    return chr(new_char_position + ord(first_alphabet_letter))
 # ask the user for an input and save its input
 # recognize the input by the user
 # print the output
