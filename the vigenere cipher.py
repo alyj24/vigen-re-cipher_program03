@@ -52,4 +52,6 @@ plaintext_input_str = input("\033[93mGreat Day! Please enter in all uppercase le
 key_input_str = input("\033[92mOne last thing, Please enter in all uppercase letters with no spaces your input key: ")
 
 # recognize the input by the user
+ciphertext = encrypt(plaintext_input_str, key_input_str)
+decrypted_plaintext = decrypt(ciphertext, key_input_str)
 # print the output
